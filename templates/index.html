@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="hero">
+  <div class="container hero__inner">
+    <p class="hero__eyebrow">Cycle Five Syndicate</p>
+    <h1 class="hero__title">{{ config.extra.tagline }}</h1>
+    <p class="hero__lead">
+      Rust-first, AI-assisted, and built with human understanding at the center.
+      We make tools we reach for ourselves — fast, reliable, and worth using.
+    </p>
+    <div class="hero__actions">
+      <a class="btn btn--primary" href="https://cracktun.es/" rel="noopener">Try Crack Tunes ↗</a>
+      <a class="btn btn--ghost" href="{{ get_url(path='@/about.md') }}">About us</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="products-heading">
+  <div class="container">
+    <h2 id="products-heading" class="section__title">Products</h2>
+    <div class="cards">
+
+      <article class="card">
+        <div class="card__media">
+          <img src="{{ get_url(path='img/crack-tunes.jpg') }}" width="1025" height="1025"
+               alt="Crack Tunes logo" loading="lazy">
+        </div>
+        <div class="card__body">
+          <h3 class="card__title">Crack Tunes</h3>
+          <p class="card__tag">Flagship · Discord music bot</p>
+          <p>
+            Our flagship product, Crack Tunes aims to be the most versatile and
+            reliable Discord music bot ever.
+          </p>
+          <a class="card__link" href="https://cracktun.es/" rel="noopener">cracktun.es ↗</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card__media">
+          <img src="{{ get_url(path='img/anya-og.png') }}" width="1200" height="630"
+               alt="Anya AI" loading="lazy">
+        </div>
+        <div class="card__body">
+          <h3 class="card__title">Anya AI</h3>
+          <p class="card__tag">Habit &amp; accountability coach</p>
+          <p>
+            Anya is an AI companion that uses tough love — and the occasional bit
+            of positive reinforcement — to help you build better habits and
+            actually follow through.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section--muted" aria-labelledby="community-heading">
+  <div class="container">
+    <h2 id="community-heading" class="section__title">Community</h2>
+    <p class="section__lead">
+      We build in the open with the people who use our software. Come say hi.
+    </p>
+    <div class="community">
+      <a class="community__item" href="{{ config.extra.discord_url }}" rel="noopener">
+        <span class="community__name">Discord</span>
+        <span class="community__meta">Chat with the team and other users</span>
+      </a>
+      <a class="community__item" href="{{ config.extra.telegram_url }}" rel="noopener">
+        <span class="community__name">Telegram</span>
+        <span class="community__meta">Announcements and updates</span>
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock content %}

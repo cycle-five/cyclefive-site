@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="{{ config.default_language }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {% block head_meta %}
+  <title>{% block title %}{{ config.title }}{% endblock title %}</title>
+  <meta name="description" content="{% block description %}{{ config.description }}{% endblock description %}">
+  {% endblock head_meta %}
+
+  <meta property="og:title" content="{% block og_title %}{{ config.title }}{% endblock og_title %}">
+  <meta property="og:description" content="{% block og_description %}{{ config.description }}{% endblock og_description %}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="{{ get_url(path='img/anya-og.png') }}">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="{{ get_url(path='favicon.svg') }}" type="image/svg+xml">
+  <link rel="stylesheet" href="{{ get_url(path='main.css') | safe }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container site-header__inner">
+      <a class="wordmark" href="{{ get_url(path='@/_index.md') }}" aria-label="Cycle Five Syndicate — home">
+        <span class="wordmark__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="28" height="28">
+            <defs>
+              <linearGradient id="wm-grad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#7c5cff"/>
+                <stop offset="1" stop-color="#00c2a8"/>
+              </linearGradient>
+            </defs>
+            <rect x="1" y="1" width="30" height="30" rx="9" fill="url(#wm-grad)"/>
+            <path d="M21.5 9.5h-7.2l-.7 4.6a4.6 4.6 0 0 1 2.4-.6 4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1-4.5-3.3"
+                  fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span class="wordmark__text">Cycle&nbsp;Five</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="{{ get_url(path='@/_index.md') }}">Home</a>
+        <a href="{{ get_url(path='@/about.md') }}">About</a>
+        <a href="{{ get_url(path='@/contact.md') }}">Contact</a>
+        <a class="site-nav__cta" href="https://cracktun.es/" rel="noopener">Crack&nbsp;Tunes ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    {% block content %}{% endblock content %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p class="site-footer__brand">
+        <strong>Cycle Five Syndicate</strong><br>
+        {{ config.extra.tagline }}
+      </p>
+      <nav class="site-footer__links" aria-label="Footer">
+        <a href="{{ get_url(path='@/about.md') }}">About</a>
+        <a href="{{ get_url(path='@/contact.md') }}">Contact</a>
+        <a href="{{ config.extra.discord_url }}" rel="noopener">Discord</a>
+        <a href="{{ config.extra.telegram_url }}" rel="noopener">Telegram</a>
+      </nav>
+      <p class="site-footer__copy">© {{ config.extra.copyright_year }} Cycle Five Syndicate</p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,30 @@
+# Zola configuration — https://www.getzola.org/documentation/getting-started/configuration/
+base_url = "https://cyclefive.xyz"
+title = "Cycle Five Syndicate"
+description = "We make software we want to use. Rust-first, AI-assisted, human-centered."
+
+default_language = "en"
+compile_sass = true
+minify_html = true
+build_search_index = false
+generate_feeds = false
+
+[markdown]
+smart_punctuation = true
+
+# zola check validates external links by hitting them. Invite/chat links and
+# bot-hostile hosts return non-200 to crawlers, so skip them to keep `zola check`
+# deterministic in CI.
+[link_checker]
+skip_prefixes = [
+    "https://discord.gg/",
+    "https://t.me/",
+    "https://cracktun.es",
+]
+
+[extra]
+tagline = "We make software we want to use."
+email = "hello@cyclefive.xyz"
+discord_url = "https://discord.gg/b6KVpfH9CF"
+telegram_url = "https://t.me/cracktunes"
+copyright_year = 2026

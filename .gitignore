@@ -1,0 +1,7 @@
+# Zola build output and cache
+/public/
+/.zola-cache/
+
+# OS / editor cruft
+.DS_Store
+*.swp

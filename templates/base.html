@@ -12,11 +12,11 @@
   <meta property="og:title" content="{% block og_title %}{{ config.title }}{% endblock og_title %}">
   <meta property="og:description" content="{% block og_description %}{{ config.description }}{% endblock og_description %}">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="{{ get_url(path='img/anya-og.png') }}">
+  <meta property="og:image" content="/img/anya-og.png">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="icon" href="{{ get_url(path='favicon.svg') }}" type="image/svg+xml">
-  <link rel="stylesheet" href="{{ get_url(path='main.css') | safe }}">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/main.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
 
   <header class="site-header">
     <div class="container site-header__inner">
-      <a class="wordmark" href="{{ get_url(path='@/_index.md') }}" aria-label="Cycle Five Syndicate — home">
+      <a class="wordmark" href="/" aria-label="Cycle Five Syndicate — home">
         <span class="wordmark__mark" aria-hidden="true">
           <svg viewBox="0 0 32 32" width="28" height="28">
             <defs>
@@ -44,9 +44,9 @@
         <span class="wordmark__text">Cycle&nbsp;Five</span>
       </a>
       <nav class="site-nav" aria-label="Primary">
-        <a href="{{ get_url(path='@/_index.md') }}">Home</a>
-        <a href="{{ get_url(path='@/about.md') }}">About</a>
-        <a href="{{ get_url(path='@/contact.md') }}">Contact</a>
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
         <a class="site-nav__cta" href="https://cracktun.es/" rel="noopener">Crack&nbsp;Tunes ↗</a>
       </nav>
     </div>
@@ -63,8 +63,8 @@
         {{ config.extra.tagline }}
       </p>
       <nav class="site-footer__links" aria-label="Footer">
-        <a href="{{ get_url(path='@/about.md') }}">About</a>
-        <a href="{{ get_url(path='@/contact.md') }}">Contact</a>
+        <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
         <a href="{{ config.extra.discord_url }}" rel="noopener">Discord</a>
         <a href="{{ config.extra.telegram_url }}" rel="noopener">Telegram</a>
       </nav>

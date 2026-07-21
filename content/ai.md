@@ -15,7 +15,7 @@ We'll happily argue the rest: em-dashes deserved more prominence — Theory of M
 
 Some of what we've made with it — and what that actually looked like.
 
-**Anya** — An AI companion that trades flattery for tough love. Our most AI-native product: the model isn't *assisting* the thing, the model *is* the thing. She's not here to be nice; she's here to make you better. → [anya-ai.app](https://anya-ai.app)
+**Anya** — An AI companion that trades flattery for tough love. Our most AI-native product: the model isn't *assisting* the thing, the model *is* the thing. She's not here to be nice; she's here to make you better. → [anya.twkr.io](https://anya.twkr.io)
 
 **RuneCast** — Our flagship word game, and our proving ground. A Rust backend, a TypeScript frontend, and a testbed for the avant-garde designs and architectural approaches we try out with AI in the loop before they graduate anywhere serious. → [runeca.st](https://runeca.st)
 

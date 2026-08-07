@@ -5,7 +5,10 @@ description = "We make software we want to use. Rust-first, AI-assisted, human-c
 
 default_language = "en"
 compile_sass = true
-minify_html = true
+# Off so the View Source compile banner (HTML comment in base.html) survives.
+# Zola's minify-html path strips comments and does not expose keep_comments.
+# Pages are a few KB; the size win is not worth erasing the artifact header.
+minify_html = false
 build_search_index = false
 generate_feeds = false
 

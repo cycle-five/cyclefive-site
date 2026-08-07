@@ -1,8 +1,33 @@
+{#-
+  Compile banner: intentional HTML comment for View Source.
+  This site is a Zola build artifact (Markdown + Tera → static HTML), not
+  hand-authored HTML. minify_html is off so this comment survives the build.
+-#}
+{%- if page -%}
+  {%- set source_path = page.relative_path -%}
+{%- elif section -%}
+  {%- set source_path = section.relative_path -%}
+{%- else -%}
+  {%- set source_path = "" -%}
+{%- endif -%}
+<!--
+  cyclefive.xyz — static HTML produced by Zola from this repo.
+  Authoring format: Markdown + Tera templates (not this file).
+{%- if source_path %}
+  This page ← content/{{ source_path }}
+  Source: https://github.com/cycle-five/cyclefive-site/blob/master/content/{{ source_path }}
+{%- else %}
+  This page ← generated shell (no Markdown source)
+  Source: https://github.com/cycle-five/cyclefive-site
+{%- endif %}
+  Rebuild: zola build
+-->
 <!DOCTYPE html>
 <html lang="{{ config.default_language }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Zola (Markdown + Tera → static HTML)">
 
   {% block head_meta %}
   <title>{% block title %}{{ config.title }}{% endblock title %}</title>

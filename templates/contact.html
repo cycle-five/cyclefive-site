@@ -19,11 +19,11 @@
         <span class="contact-card__label">Email</span>
         <span class="contact-card__value">{{ config.extra.email }}</span>
       </a>
-      <a class="contact-card" href="{{ config.extra.discord_url }}" rel="noopener">
+      <a class="contact-card" href="{{ config.extra.discord_url | safe }}" rel="noopener">
         <span class="contact-card__label">Discord</span>
         <span class="contact-card__value">Join the server ↗</span>
       </a>
-      <a class="contact-card" href="{{ config.extra.telegram_url }}" rel="noopener">
+      <a class="contact-card" href="{{ config.extra.telegram_url | safe }}" rel="noopener">
         <span class="contact-card__label">Telegram</span>
         <span class="contact-card__value">@cracktunes ↗</span>
       </a>

@@ -113,8 +113,8 @@
         <a href="/contact/">Contact</a>
         <a href="/privacy/">Privacy</a>
         <a href="/terms/">Terms</a>
-        <a href="{{ config.extra.discord_url }}" rel="noopener">Discord</a>
-        <a href="{{ config.extra.telegram_url }}" rel="noopener">Telegram</a>
+        <a href="{{ config.extra.discord_url | safe }}" rel="noopener">Discord</a>
+        <a href="{{ config.extra.telegram_url | safe }}" rel="noopener">Telegram</a>
       </nav>
       <p class="site-footer__copy">© {{ config.extra.copyright_year }} Cycle Five Syndicate</p>
     </div>

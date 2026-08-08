@@ -84,11 +84,11 @@
       We build in the open with the people who use our software. Come say hi.
     </p>
     <div class="community">
-      <a class="community__item" href="{{ config.extra.discord_url }}" rel="noopener">
+      <a class="community__item" href="{{ config.extra.discord_url | safe }}" rel="noopener">
         <span class="community__name">Discord</span>
         <span class="community__meta">Chat with the team and other users</span>
       </a>
-      <a class="community__item" href="{{ config.extra.telegram_url }}" rel="noopener">
+      <a class="community__item" href="{{ config.extra.telegram_url | safe }}" rel="noopener">
         <span class="community__name">Telegram</span>
         <span class="community__meta">Announcements and updates</span>
       </a>

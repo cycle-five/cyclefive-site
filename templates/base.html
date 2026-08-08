@@ -44,8 +44,10 @@
   <meta property="og:description" content="{% block og_description %}{{ config.description }}{% endblock og_description %}">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="{{ config.title }}">
-  {#- 404.html is the one template Zola gives no current_url, so guard it. -#}
-  <meta property="og:url" content="{{ current_url | default(value=config.base_url) }}">
+  {#- 404.html is the one template Zola gives no current_url, so guard it.
+      | safe for the same reason as the banner above: Tera escapes "/" to &#x2F;,
+      and scrapers parsing og:url are not reliably entity-decoding it. -#}
+  <meta property="og:url" content="{{ current_url | default(value=config.base_url) | safe }}">
   {#- og:image must be ABSOLUTE. Root-relative works for <link>/<img> but Twitter
       will not resolve it here, so this one asset path stays get_url(). -#}
   <meta property="og:image" content="{% block og_image %}{{ get_url(path='img/cyclefive-og.png') }}{% endblock og_image %}">

@@ -1,8 +1,39 @@
+{#-
+  Compile banner: intentional HTML comment for View Source.
+  This site is a Zola build artifact (Markdown + Tera → static HTML), not
+  hand-authored HTML. minify_html is off so this comment survives the build.
+  EVERY value interpolated below needs | safe. Tera auto-escapes "/" to &#x2F;
+  in .html templates, and comment content — unlike attribute values — is raw
+  text a browser never decodes, so an unescaped slash breaks the URL outright.
+  ({% autoescape %} would scope this to the block, but Zola 0.22.1's Tera has
+  no such tag.) content/ is hand-authored; a "-->" in a filename is not a
+  realistic risk here.
+-#}
+{%- if page -%}
+  {%- set source_path = page.relative_path -%}
+{%- elif section -%}
+  {%- set source_path = section.relative_path -%}
+{%- else -%}
+  {%- set source_path = "" -%}
+{%- endif -%}
 <!DOCTYPE html>
+<!--
+  cyclefive.xyz — static HTML produced by Zola from this repo.
+  Authoring format: Markdown + Tera templates (not this file).
+{%- if source_path %}
+  This page ← content/{{ source_path | safe }}
+  Source: {{ config.extra.repo_url | safe }}/blob/master/content/{{ source_path | safe }}
+{%- else %}
+  This page ← generated shell (no Markdown source)
+  Source: {{ config.extra.repo_url | safe }}
+{%- endif %}
+  Rebuild: zola build
+-->
 <html lang="{{ config.default_language }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Zola (Markdown + Tera → static HTML)">
 
   {% block head_meta %}
   <title>{% block title %}{{ config.title }}{% endblock title %}</title>

@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Blog · {{ config.title }}{% endblock title %}
+{% block description %}Engineering notes from Cycle Five — measurements, methods, and the occasional basement GPU.{% endblock description %}
+{% block og_title %}Blog · {{ config.title }}{% endblock og_title %}
+{% block og_description %}Engineering notes from Cycle Five — measurements, methods, and the occasional basement GPU.{% endblock og_description %}
+
+{% block content %}
+<section class="section">
+  <div class="container prose">
+    <header class="page-header">
+      <h1 class="page-header__title">{{ section.title }}</h1>
+      <p class="page-header__lead">Engineering notes: measurements, methods, and the occasional basement GPU.</p>
+    </header>
+    <ul class="post-list">
+      {% for page in section.pages %}
+      <li class="post-list__item">
+        <article>
+          <h2 class="post-list__title"><a href="{{ page.permalink | safe }}">{{ page.title }}</a></h2>
+          <p class="post-meta">
+            <time datetime="{{ page.date }}">{{ page.date | date(format="%B %e, %Y") }}</time>
+            {%- if page.reading_time %} · {{ page.reading_time }} min read{% endif %}
+          </p>
+          {% if page.description %}<p>{{ page.description }}</p>{% endif %}
+        </article>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endblock content %}

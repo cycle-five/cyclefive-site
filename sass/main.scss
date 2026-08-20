@@ -281,3 +281,51 @@ img { max-width: 100%; height: auto; display: block; }
   body { font-size: 16px; }
   .site-nav__cta { display: none; }
 }
+
+// ---- Blog ----------------------------------------------------------------
+.post-list { list-style: none; margin: 0; padding: 0; }
+.post-list__item { padding: 1.4rem 0; border-bottom: 1px solid var(--line); }
+.post-list__item:last-child { border-bottom: 0; }
+.post-list__title { font-size: 1.35rem; margin: 0 0 .25rem; }
+.post-meta { color: var(--muted); font-size: .9rem; margin: 0 0 .6rem; }
+
+// Prose extensions for long-form posts. The base .prose rules only cover
+// p/strong; posts bring headings, code, tables, quotes, and figures.
+.prose h2 { font-size: 1.5rem; margin: 2.2rem 0 .7rem; }
+.prose h3 { font-size: 1.15rem; margin: 1.8rem 0 .5rem; }
+.prose ul, .prose ol { margin: 0 0 1.2rem; padding-left: 1.4rem; color: var(--ink-soft); }
+.prose li { margin: .3rem 0; }
+.prose code {
+  font-family: var(--font-mono);
+  font-size: .85em;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: .1em .35em;
+}
+.prose pre {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.2rem;
+  overflow-x: auto;
+  margin: 0 0 1.2rem;
+}
+.prose pre code { background: none; border: 0; padding: 0; font-size: .82rem; line-height: 1.55; }
+.prose blockquote {
+  margin: 0 0 1.2rem;
+  padding: .2rem 0 .2rem 1rem;
+  border-left: 3px solid var(--accent);
+  color: var(--muted);
+}
+.prose hr { border: 0; border-top: 1px solid var(--line); margin: 2rem 0; }
+.prose .table-wrap { overflow-x: auto; margin: 0 0 1.2rem; }
+.prose table { border-collapse: collapse; font-size: .85rem; line-height: 1.45; min-width: 100%; }
+.prose th, .prose td { padding: .45rem .7rem; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap; }
+.prose th { color: var(--ink); font-weight: 600; }
+.prose td { color: var(--ink-soft); }
+.prose td code, .prose th code { white-space: nowrap; }
+.prose figure { margin: 1.6rem 0; }
+.prose figure svg { display: block; width: 100%; height: auto; }
+.prose figcaption { color: var(--muted); font-size: .85rem; margin-top: .5rem; }
+.post-footer { margin-top: 2.5rem; border-top: 1px solid var(--line); padding-top: 1.2rem; }

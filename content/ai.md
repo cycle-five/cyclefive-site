@@ -25,7 +25,7 @@ Some of what we've made with it — and what that actually looked like.
 
 ## Papers
 
-Satire done in earnest — and one that's earnest all the way down.
+Recreational, some tongue-in-cheek, we endevour stay abreast of current trends in Mathematics, Physics, and Computing including practical and theoretical applications,
 
 - **The Parametric Theory of Yappers** — *A Behavioral Thermodynamics Approach to Voice Channel Dynamics.* Axioms of communicative escalation, a bimodal equilibrium model, and a straight-faced account of when a voice channel survives its loudest member.
 - **Catastrophic Failure Events in Online Communities** — *A Mathematical Framework for Modeling Trust Network Collapse in High-Risk Digital Spaces.* Poisson "crash-out" events and a Community Stability Index for when a high-stress server fractures — apparatus entirely real, straight face intact.
